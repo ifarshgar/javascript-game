@@ -1,0 +1,11 @@
+{
+	"name": "A Memory Game",
+	"short_name": "MemoryGame",
+	"theme_color": "#f9a875",
+	"background_color": "#f9a875",
+	"display": "standalone",
+	"orientation": "portrait",
+	"scope": "/",
+	"start_url": "/",
+	"icons": []
+}
