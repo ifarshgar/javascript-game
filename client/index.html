@@ -1,17 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8" />
-	<meta name="description" content="The greatest memory game ever created.">
-	<link rel="manifest" href="/manifest.json">
-	<link rel="icon" type="image/svg+xml" href="favicon.png" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta name="theme-color" content="#f9a875">
-	<title>A Memory Game</title>
-	<script type="module" src="/src/main.ts" defer></script>
-</head>
-<body>
-	<h1>A memory game</h1>
-	<p>Check the console!</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="The greatest memory game ever created." />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/src/images/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f9a875" />
+    <title>A Memory Game</title>
+    <script type="module" src="/src/main.ts" defer></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="row">
+        <div class="center column">
+          <h1>Memory game</h1>
+        </div>
+      </div>
+    </header>
+
+    <section class="first container">
+      <div class="row">
+        <!-- Quick start of the game section -->
+        <div class="quick-start column">
+          <div class="center">
+            <div class="username">
+              <h3 class="mb">Username</h3>
+              <input type="text" id="username" name="username" placeholder="Enter your name" />
+              <p class="username-alert hidden" id="username-alert">* Please enter your name.</p>
+            </div>
+
+            <div class="grid-buttons">
+              <h3>Grid</h3>
+              <div class="button-group">
+                <div class="button-group-inner row">
+                  <div class="active option">6x6</div>
+                  <div class="option">8x6</div>
+                  <div class="option">10x6</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="play">
+              <input class="play-button" type="button" value="Play" id="play-button" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Leader board section -->
+        <div class="column leaderboard-container">
+          <div class="leaderboard">
+            <h1 class="center mb">Leaderboard</h1>
+            <div class="leaderboard-table">
+              <div class="row leaderboard-header mt">
+                <h3 class="column">Rank</h3>
+                <h3 class="column">Username</h3>
+                <h3 class="column">Score</h3>
+              </div>
+              <div class="row leaderboard-item mt">
+                <h3 class="column">1.</h3>
+                <h3 class="column">Name 1</h3>
+                <h3 class="column">20000</h3>
+              </div>
+              <div class="row leaderboard-item mt">
+                <h3 class="column">2.</h3>
+                <h3 class="column">Name 2</h3>
+                <h3 class="column">20050</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
 </html>

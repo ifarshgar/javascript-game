@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="The greatest memory game ever created." />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/svg+xml" href="/src/images/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f9a875" />
+    <title>A Memory Game</title>
+    <script type="module" src="src/game.ts" defer></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/game.css" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="row">
+        <div class="back-to-dashboard">
+          <a href="index.html">&lt;&lt; Back to dashboard</a>
+        </div>
+        <div class="center column">
+          <h1>Memory game</h1>
+        </div>
+      </div>
+      <div class="welcome row">
+        <div class="center column">
+          <h3 id="welcome-user">Welcome</h3>
+        </div>
+      </div>
+      <div class="game-mode row">
+        <div class="center column">
+          <h3 id="game-mode">Game mode: Regular</h3>
+        </div>
+      </div>
+    </header>
+
+    <section class="first container">
+      <div class="center status row">
+        <div class="column">
+          <h3>Timer</h3>
+          <div class="timer box" id="timer">00:00</div>
+        </div>
+        <div class="column">
+          <h3>Moves</h3>
+          <div class="moves box" id="moves">0</div>
+        </div>
+        <div class="column">
+          <h3>Score</h3>
+          <div class="score box" id="score">0</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="center play-again">
+      <input class="hidden play-again-button" type="button" value="Play again" id="play-again-button" />
+    </div>
+
+    <!-- Game board grid -->
+    <section class="second container">
+      <div class="game-grid"></div>
+    </section>
+  </body>
+</html>

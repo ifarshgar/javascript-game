@@ -1,3 +1,185 @@
 /**
  * Create your styles here.
  */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Barlow", sans-serif;
+  font-weight: 300 !important;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  font-weight: 300 !important;
+}
+
+header {
+  margin-top: 5%;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 1;
+}
+
+.center {
+  text-align: center;
+}
+
+.container {
+  padding: 1% 5%;
+}
+
+.mb {
+  margin-bottom: 10px;
+}
+
+.mt {
+  margin-top: 10px;
+}
+
+.ml {
+  margin-left: 10px;
+}
+
+.mr {
+  margin-right: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* --- End of globals --- */
+
+section.first {
+  margin-top: 5%;
+}
+
+/* --------------------------------------- */
+
+.username {
+  margin-top: 25%;
+}
+
+input {
+  border: 1px solid #999;
+  border-radius: 5px;
+  padding: 15px 20px;
+  font-size: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-width: 280px;
+  text-align: center;
+}
+
+.username-alert {
+  color: red;
+  margin-top: 10px;
+}
+
+/* --------------------------------------- */
+
+.grid-buttons {
+  margin-top: 50px;
+}
+
+.button-group {
+  margin-top: 10px;
+}
+
+.button-group-inner {
+  border: 1px solid #666;
+  border-radius: 5px;
+  width: max-content;
+  margin: auto;
+}
+
+.option {
+  width: 100px;
+  padding: 5px;
+  border-right: 1px solid #666;
+  cursor: pointer;
+}
+
+.option:last-child {
+  border-right: none;
+}
+
+.active.option {
+  background-color: #2196F3;
+  color: #fff;
+  width: 100px;
+  padding: 5px;
+}
+
+/* --------------------------------------- */
+
+.play input[type="button"] {
+  background-color: #2196F3;
+  color: #fff;
+  margin-top: 50px;
+  width: 150px;
+  min-width: 150px;
+}
+
+.play input[type="button"]:hover {
+  background-color: #0288D1;
+  cursor: pointer;
+}
+
+/* --------------------------------------- */
+
+.leaderboard-container {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.leaderboard {
+  border: 1px solid #666;
+  padding: 20px 5px;
+  min-height: 500px;
+}
+
+.leaderboard-table {
+  padding: 10px 50px;
+}
+
+.leaderboard-header {
+  padding: 5px 0px;
+}
+
+.leaderboard-item {
+  border: 1px solid #999;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* --------------------------------------- */
+
+@media only screen and (max-width: 1080px) {
+  .leaderboard-container {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .leaderboard-table {
+    padding: 10px 20px;
+  }
+}
