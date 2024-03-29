@@ -1,48 +1,9 @@
 import './Timer.ts';
-import { GameMode, getGameModeColumns } from './ButtonGroup';
-import { deepCopy } from './common.js';
-import { getCards } from './cards.js';
-
-// Getting the url params to prepare the game
-const urlParams = new URLSearchParams(window.location.search);
-const gameMode = urlParams.get('mode') ?? GameMode['6x6'];
-const username = urlParams.get('username');
-
-const welcomeUser = document.getElementById('welcome-user') as HTMLElement;
-welcomeUser.innerHTML = 'Welcome ' + username + '!';
-
-const gameModeBox = document.getElementById('game-mode') as HTMLElement;
-gameModeBox.innerHTML = 'Game mode: ' + gameMode;
-
-let moves = 0;
-const movesStatus = document.getElementById('moves') as HTMLElement;
-
-let score = 0;
-const scoreStatus = document.getElementById('score') as HTMLElement;
-
-// Play again button logic
-const playAgainButton = document.getElementById('play-again-button');
-playAgainButton?.addEventListener('click', () => {
-  window.location.href = 'game.html' + '?mode=' + gameMode + '&username=' + username;
-});
-const showPlayAgainButton = () => {
-  playAgainButton?.classList.remove('hidden');
-};
-
-// ----------------------------------------
-// Adding the generated cards into the right placeholder
-const gameGrid = document.querySelector('.game-grid') as HTMLElement;
-
-let templateColumns = '';
-for (let i = 0; i < getGameModeColumns(gameMode); i++) {
-  templateColumns += 'auto ';
-}
-gameGrid.style.gridTemplateColumns = templateColumns;
-
-const rowSize = gameMode === GameMode['6x1'] ? 1 : 6;
-const gameSize = getGameModeColumns(gameMode) * rowSize;
-const gridCards = getCards(gameSize);
-gameGrid.innerHTML = gridCards.join(' ');
+import { deepCopy } from './Common.js';
+import { updateUserMoves } from './Moves.js';
+import { getScore, updateUserScore } from './Score.js';
+import './PrepareGameScene.js';
+import { getGameSize, showPlayAgainButton } from './PrepareGameScene.js';
 
 // ----------------------------------------
 // The game logic
@@ -57,7 +18,7 @@ const emptyCard: Card = { id: -1, flipped: false, matched: false, image: '' };
 
 // Initializing the cards according to the game size
 const cards: Card[] = [];
-for (let i = 0; i < gameSize; i++) {
+for (let i = 0; i < getGameSize(); i++) {
   const card = deepCopy(emptyCard);
   card.id = i;
   cards.push(card);
@@ -93,18 +54,23 @@ const isGameFinished = () => {
     }
   }
   if (finished) {
-    window.confirm('Congrats! You won!');
+    const score = getScore();
+    window.confirm(`Congrats! You won! \nYour score is: ${score}`);
     return true;
   }
+  return false;
 };
+
+// ------------
+// The main game logic goes here and it is bound to the user clicks on cards
+// ------------
 
 const cardContainers = document.querySelectorAll('.card-container');
 cardContainers.forEach((cardContainer) => {
   cardContainer?.addEventListener('click', () => {
     // --------------------------
     // counting the user clicks
-    moves += 1;
-    movesStatus.innerHTML = moves.toString();
+    updateUserMoves();
     // --------------------------
 
     // Getting the current card details
@@ -175,12 +141,19 @@ cardContainers.forEach((cardContainer) => {
         selectedCard1.matched = true;
         selectedCard2.matched = true;
 
+        // counting the scores
+        updateUserScore();
+
+        // checking to see if the end of the game criteria has reached
         setTimeout(() => {
           if (isGameFinished()) {
             showPlayAgainButton();
           }
         }, 500);
-      } else {
+      }
+
+      // if the cards do no match the flipped cards should go back to be normal
+      else {
         const cardId1 = selectedCard1.id;
         const cardId2 = selectedCard2.id;
         setTimeout(() => {
@@ -195,7 +168,7 @@ cardContainers.forEach((cardContainer) => {
         }, 500);
       }
 
-      // reverting the changes if the user did not match any cards successfully
+      // resetting the trackers for more user interactions as the previous interactions were resolved.
       resetTracker();
     }
   });
