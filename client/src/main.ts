@@ -1,4 +1,3 @@
-import './style.css';
 import './ButtonGroup.ts';
 import { getSelectedOption } from './ButtonGroup';
 // Write your code here
@@ -14,6 +13,7 @@ fetch('http://localhost:8888?message=hello')
   })
   .catch((err) => console.error(err));
 
+// Getting the user name
 const usernameInput = document.getElementById('username');
 const usernameAlert = document.getElementById('username-alert');
 let username = '';
@@ -21,7 +21,9 @@ usernameInput?.addEventListener('keyup', (event) => {
   const value = (event.target as HTMLInputElement).value;
   username = value;
 });
+// ------------------------------------------
 
+// The logic behind the play button and going to the main game scene.
 const playButton = document.getElementById('play-button');
 playButton?.addEventListener('click', () => {
   if (username) {
@@ -31,6 +33,6 @@ playButton?.addEventListener('click', () => {
     usernameAlert?.classList.remove('hidden');
   }
 });
-
 // ------------------------------------------
+
 

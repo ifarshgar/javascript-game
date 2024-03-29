@@ -1,4 +1,4 @@
-import { getRandomInt } from './common';
+import { getRandomInt } from './Common';
 
 enum CardTypes {
   'Clubs',
@@ -16,7 +16,7 @@ export const getCards = (total: number) => {
     const randomCard = getRandomInt(1, 14);
     const image = `${'/src/images/' + CardTypes[randomType] + '/' + randomCard + '.svg'}`;
     const imageName = `${CardTypes[randomType] + '/' + randomCard}`;
-    
+
     // Making a pair of cards randomly selected from the deck
     const card1 = `
       <div class="card-container" id=${index++} image=${imageName}>
