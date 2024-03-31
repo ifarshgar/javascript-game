@@ -188,3 +188,22 @@ input {
     padding: 10px 20px;
   }
 }
+
+@media only screen and (max-width: 850px) {
+  section > .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .username {
+    margin-top: 5%;
+  }
+
+  .leaderboard-container {
+    margin-top: 20px;
+  }
+
+  .leaderboard-container .row {
+    display: flex;
+  }
+}

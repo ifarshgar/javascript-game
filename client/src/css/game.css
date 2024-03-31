@@ -7,7 +7,7 @@
 /* --------------------------------------- */
 
 .welcome {
-  margin-top: 30px;  
+  margin-top: 30px;
 }
 
 .game-mode {
@@ -17,9 +17,6 @@
 /* --------------------------------------- */
 
 :root {
-  /* --card-width: 300px;
-  --card-height: 420px; */
-
   --card-width: 100px;
   --card-height: 130px;
 }
@@ -83,4 +80,37 @@ section.second {
 .play-again input[type="button"]:hover {
   background-color: #0288D1;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 850px) {
+  header .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .back-to-dashboard {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    left: 30px;
+    font-size: 0.9rem;
+  }
+
+  .status {
+    gap: 10px;
+  }  
+
+  .game-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    row-gap: 10px;
+    column-gap: 10px;
+    width: max-content;
+  }
+
+  :root {
+    --card-width: 50px;
+    --card-height: 70px;
+  }
+
 }
