@@ -12,6 +12,9 @@ Only vanilla javascript, html, and css have been leveraged to create this projec
 - Typescirpt components
 - Summary
 
+ <img src="designs/screenshots2.png" alt="dashboard page" class="inline"/>
+ <img src="designs/screenshots1.png" alt="game page" class="inline"/>
+
 ## Quick Start
 
 In order to use the application you should first navigate to the client folder with your terminal and then install the packages and dependecies of the project and later on you can run the application by using the following commands: 
