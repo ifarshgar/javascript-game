@@ -1,10 +1,11 @@
 import { GameMode, getGameModeColumns } from './ButtonGroup';
-import { getCards } from './Cards.js';
+import { getCards } from './Cards';
+import { getScore } from './Score';
 
 // Getting the url params to prepare the game
 const urlParams = new URLSearchParams(window.location.search);
 const gameMode = urlParams.get('mode') ?? GameMode['6x6'];
-const username = urlParams.get('username');
+export const username = urlParams.get('username');
 
 const welcomeUser = document.getElementById('welcome-user') as HTMLElement;
 welcomeUser.innerHTML = 'Welcome ' + username + '!';
@@ -16,7 +17,8 @@ gameModeBox.innerHTML = 'Game mode: ' + gameMode;
 // Play again button logic
 const playAgainButton = document.getElementById('play-again-button');
 playAgainButton?.addEventListener('click', () => {
-  window.location.href = 'game.html' + '?mode=' + gameMode + '&username=' + username;
+  window.location.href =
+    'game.html' + '?mode=' + gameMode + '&username=' + username + '&score=' + getScore();
 });
 export const showPlayAgainButton = () => {
   playAgainButton?.classList.remove('hidden');
@@ -32,7 +34,7 @@ for (let i = 0; i < getGameModeColumns(gameMode); i++) {
 }
 gameGrid.style.gridTemplateColumns = templateColumns;
 
-export const getRowSize = () => gameMode === GameMode['6x1'] ? 1 : 6;
+export const getRowSize = () => (gameMode === GameMode['6x1'] ? 1 : 6);
 export const getGameSize = () => getGameModeColumns(gameMode) * getRowSize();
 
 const gridCards = getCards(getGameSize());

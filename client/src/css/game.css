@@ -21,7 +21,7 @@
   --card-height: 420px; */
 
   --card-width: 100px;
-  --card-height: 140px;
+  --card-height: 130px;
 }
 
 .card-container {
@@ -50,10 +50,9 @@
   transform: rotateY(180deg);
 }
 
-/* .card-container:hover .card-inner {
-  transform: rotateY(180deg);
+.card-container:hover {
   cursor: pointer;
-} */
+}
 
 /* --------------------------------------- */
 

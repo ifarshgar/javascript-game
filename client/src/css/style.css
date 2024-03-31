@@ -171,6 +171,11 @@ input {
   border-radius: 5px;
 }
 
+.leaderboard-empty-item {
+  margin-top: 20px;
+  font-size: 1.1rem;
+}
+
 /* --------------------------------------- */
 
 @media only screen and (max-width: 1080px) {

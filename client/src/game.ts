@@ -1,9 +1,13 @@
-import './Timer.ts';
-import { deepCopy } from './Common.js';
-import { updateUserMoves } from './Moves.js';
-import { getScore, updateUserScore } from './Score.js';
-import './PrepareGameScene.js';
-import { getGameSize, showPlayAgainButton } from './PrepareGameScene.js';
+import { deepCopy } from './Common';
+import { updateUserMoves } from './Moves';
+import { getScore, updateUserScore } from './Score';
+import './PrepareGameScene.ts';
+import { getGameSize, showPlayAgainButton, username } from './PrepareGameScene';
+import { saveUserScore } from './Leaderboard.js';
+import { startTimer } from './Timer';
+
+// Starting the game timer
+startTimer();
 
 // ----------------------------------------
 // The game logic
@@ -55,6 +59,7 @@ const isGameFinished = () => {
   }
   if (finished) {
     const score = getScore();
+    saveUserScore(username as string, score);
     window.confirm(`Congrats! You won! \nYour score is: ${score}`);
     return true;
   }
