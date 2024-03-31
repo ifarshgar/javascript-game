@@ -7,12 +7,12 @@ export enum GameMode {
 
 export const getGameModeColumns = (option: string) => {
   switch (option) {
-    case GameMode["6x1"]:
-    case GameMode["6x6"]:
+    case GameMode['6x1']:
+    case GameMode['6x6']:
       return 6;
-    case GameMode["8x6"]:
+    case GameMode['8x6']:
       return 8;
-    case GameMode["10x6"]:
+    case GameMode['10x6']:
       return 10;
     default:
       return 6;
