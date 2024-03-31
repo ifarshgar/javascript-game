@@ -1,7 +1,7 @@
 # Memory Game - Frontend
 
 I had a lot of fun making the memory game. It was a profound experience and I enjoyed every second of it. The project has been written with pure Typescirpt with no helper libraries. 
-Only vanilla javascript, html, and css have been leveraged to create this project. 
+Only vanilla javascript, html, and css have been leveraged to create this project. The application has been created in a very modular way and the separation of concerns have been in the center of attention while developing the application. 
 
 ## Table of contents
 
