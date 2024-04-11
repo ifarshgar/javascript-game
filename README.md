@@ -59,7 +59,7 @@ This is a card game where pairs of cards contain images, such that for each card
 
 ## ⏰ How long was spent on the project?
 
-More than 10-12 hours 
+About 10-12 hours 
 
 ## 🎮 Features
 
