@@ -4,11 +4,9 @@
 
 - [Setup](#🛠️-setup)
 - [Instructions](#instructions-for-memory-game)
-- [How long should I spend on the task](#⏰-how-long-should-i-spend-on-the-task)
+- [How long was spent on the project](#⏰-how-long-was-spent-on-the-project)
 - [Features](#🎮-features)
-- [Additional guidance](#👩‍🏫-additional-guidance)
-- [Designs](#🎨-designs)
-- [Questions?](#ℹ️-questions)
+
 
 ## 🛠️ Setup
 
