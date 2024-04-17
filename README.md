@@ -8,6 +8,10 @@
 - [Features](#🎮-features)
 
 
+ <img src="client/designs/screenshots2.png" alt="dashboard page" class="inline"/>
+ <img src="client/designs/screenshots1.png" alt="dashboard page" class="inline"/>
+
+
 ## 🛠️ Setup
 
 There arw two folders in the project.
